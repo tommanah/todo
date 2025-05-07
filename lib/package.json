@@ -1,0 +1,24 @@
+{
+  "name": "simple-state-manager",
+  "version": "1.0.0",
+  "description": "Простой менеджер состояния с подпиской на изменения",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "state",
+    "manager",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.2",
+    "rollup": "^4.40.2",
+    "typescript": "^5.0.0"
+  }
+}

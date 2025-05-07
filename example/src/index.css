@@ -1,0 +1,248 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --color-bg: #f8f9fa;
+  --color-bg-dark: #e9ecef;
+  --color-primary: #a5d8ff;
+  --color-primary-dark: #74c0fc;
+  --color-secondary: #ffd8a8;
+  --color-text: #495057;
+  --color-text-light: #6c757d;
+  --color-success: #b2f2bb;
+  --color-success-dark: #8ce99a;
+  --color-danger: #ffc9c9;
+  --color-danger-dark: #ffa8a8;
+
+  color-scheme: light;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.2em;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.todo-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.todo-input-container {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  font-size: 1rem;
+  margin-right: 8px;
+  transition: border-color 0.15s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 0 0 3px rgba(116, 192, 252, 0.25);
+}
+
+button {
+  border-radius: 8px;
+  border: none;
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+button:focus,
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(116, 192, 252, 0.25);
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-button {
+  background-color: var(--color-bg-dark);
+  padding: 0.5rem 1rem;
+}
+
+.filter-button.active {
+  background-color: var(--color-primary);
+  font-weight: 600;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f3f5;
+  position: relative;
+  min-height: 42px;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-checkbox {
+  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-top: 7px;
+}
+
+.todo-text {
+  flex-grow: 1;
+  color: var(--color-text);
+  transition: color 0.2s, text-decoration 0.2s;
+  margin-right: 10px;
+  word-break: break-word;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+.todo-text:not(.completed) {
+  cursor: pointer;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: var(--color-text-light);
+}
+
+.todo-delete {
+  background-color: var(--color-danger);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.todo-delete:hover {
+  background-color: var(--color-danger-dark);
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.todo-edit {
+  background-color: var(--color-secondary);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.todo-edit:hover {
+  background-color: #ffc078;
+}
+
+.todo-edit-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 0.75rem;
+  width: 100%;
+  padding-right: 10px;
+}
+
+.todo-edit-input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-primary);
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin-top: 2px;
+}
+
+.todo-edit-input:focus {
+  outline: none;
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 0 0 2px rgba(116, 192, 252, 0.25);
+}
+
+.todo-edit-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: -2px;
+}
+
+.todo-edit-save {
+  background-color: var(--color-success);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.todo-edit-save:hover {
+  background-color: var(--color-success-dark);
+}
+
+.todo-edit-cancel {
+  background-color: var(--color-danger);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.todo-edit-cancel:hover {
+  background-color: var(--color-danger-dark);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} 
